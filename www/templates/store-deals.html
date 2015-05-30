@@ -1,0 +1,80 @@
+<ion-view view-title="{{outlet_name}}">
+<ion-nav-buttons side="left">
+          
+		  <a class="button button-clear" href="#/tab/dash/{{retailer_id}}"><i class="ion-arrow-left-c"></i> Back</a>
+        </ion-nav-buttons>
+		
+  <ion-content class="store-bg ">
+<!--   <p class="rest-profile">
+  <div class="list card no-margin my-opacity">
+
+  <div class="item item-avatar">
+    <img src="img/logo/1.png">
+    <h2>Quality Hyper Market</h2>
+    <p>Salwa Rd, Doha, Qatar</p>
+	
+  </div>
+   <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+      <i class="icon ion-clock"></i>
+      Open/Close : 24 Hours
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-ios-telephone"></i>
+      Tel : +974 4460 4242
+    </a>    
+  </div>
+
+</div>
+
+  
+</p>
+-->
+  
+<ion-slide-box delegate-handle="image-viewer" on-slide-changed="slideChanged(index)" auto-play="true" does-continue="true" slide-interval="4000">
+              
+              <ion-slide ng-repeat="item in slides">
+                   <img class="res-img" ng-src="http://qoffers.qatarperfectmedia.com/app/retailer_slider/{{item.ret_slider_id}}.jpg" >
+              </ion-slide>
+            </ion-slide-box>
+
+
+<ion-scroll direction="x" class="wide-as-needed">
+<a class="button my-tab" ng-click="changeCat('0')"> <i class="icon ion-grid"> </i> All </a><a ng-repeat="categories in category" class="button my-tab" ng-click="changeCat('{{categories.category_id}}')"> <i class="icon ion-grid"> </i> {{ categories.category_name }} </a>
+</ion-scroll>
+
+{{error}}
+<div class="list padding">
+    <div ng-repeat="datas in data" class="item item-thumbnail-left" >
+      <!-- <img ng-if="datas.offer_id" ng-src="http://qoffers.qatarperfectmedia.com/retailer_logo/{{datas.offer_id}}.jpg">
+      <img ng-hide="datas.offer_id" ng-src="img/no_image.jpg"> -->
+      <img class="" src="http://qoffers.qatarperfectmedia.com/retailer_logo/{{datas.offer_id}}.jpg">
+      <!-- <span ng-bind-html="datas.offer_title_ar"></span> -->
+      
+      <h6>{{datas.offer_title}}</h6>
+	  <h4>Valid till: {{datas.offer_expiry}}</h4>
+    <div ng-if="0 == datas.offer_type">
+     <div class="new-price">QR {{datas.offer_new_price}}</div>
+    </div>
+    <div ng-if="3 == datas.offer_type">
+     <div class="old-price">QR {{datas.offer_old_price}}</div>
+     <div class="new-price">QR {{datas.offer_new_price}}</div>
+    </div>
+    <div ng-if="2 == datas.offer_type">
+     <div class="discount-price">Discount {{datas.discount_value}}</div>
+     <div class="new-price">QR {{datas.offer_new_price}}</div>
+    </div>
+    <div ng-if="1 == datas.offer_type">
+     <div class="cash-price">Cash Back QR {{datas.cash_back_value}}</div>
+     <div class="new-price">QR {{datas.offer_new_price}}</div>
+    </div>
+
+	  
+	  </div>
+</div>	
+
+  </ion-content>
+
+
+</ion-view>
+

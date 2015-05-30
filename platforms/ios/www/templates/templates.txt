@@ -1,0 +1,23 @@
+channel-doctor.html
+chat-detail.html
+cl-status.html
+clinic-detail.html
+clinics.html
+doc-detail.html
+doctor-details.html
+form.html
+my-profile.html
+my-status.html
+promotion.html
+signup.html
+slide.html
+store-deals.html
+store-detail.html
+tab-account.html
+tab-chats - Copy.html
+tab-chats.html
+tab-dash - Copy.html
+tab-dash.html
+tab-welcome.html
+tabs.html
+templates.txt
